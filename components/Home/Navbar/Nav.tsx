@@ -1,12 +1,27 @@
+"use client";
 import Logo from "@/components/Helper/Logo";
+import ThemeToggler from "@/components/Helper/ThemeToggler";
 import { NAVLINKS } from "@/constant/constant";
 import { link } from "fs";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { HiBars3BottomRight } from "react-icons/hi2";
 
 const Nav = () => {
+  const [navBg, setNavbg] = useState(false);
+
+  useEffect(() => {
+    const handler = () => {
+      if (window.scrollY >= 90) setNavbg(true);
+      if (window.scrollY < 90) setNavbg(false);
+    };
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
   return (
-    <div className="transition-all duration-200 h-[12vh] z-100 fixed w-full bg-black">
+    <div
+      className={`transition-all ${navBg ? "dark:bg-amber-900 bg-blue-950 shadow-md" : "fixed"}duration-200 h-[12vh] z-100 fixed w-full flex items-center`}
+    >
       <div className="flex items-center h-full justify-between w-[90%] xl:w-[80%] mx-auto">
         {/* LOGO */}
         <Logo />
@@ -34,6 +49,10 @@ const Nav = () => {
               Create Account
             </span>
           </a>
+          {/* Theme toggler*/}
+          <ThemeToggler />
+          {/* Burger menu */}
+          <HiBars3BottomRight className="w-8 h-8 cursor-pointer text-white lg:hidden" />
         </div>
       </div>
     </div>
