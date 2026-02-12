@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import { GiSparkles } from "react-icons/gi";
 import { TypeAnimation } from "react-type-animation";
@@ -96,6 +97,20 @@ const Hero = () => {
             repeat={Infinity}
           />
         </h1>
+        {/* description */}
+        <p className="text-base sm:text-xl text-gray-200 mb-12 max-w-3xl mx-auto leading-relaxed">
+          We are passionate in delivering cutting-edge technology services that
+          drive growth and success for our clients.
+        </p>
+        {/* get started button */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link
+            href="{#}"
+            className="group inline-flex items-center justify-center space-x-2 bg-white dark:bg-white text-gray-900 dark:text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
+          >
+            <span>Get Started</span>
+          </Link>
+        </div>
       </div>
     </div>
   );
