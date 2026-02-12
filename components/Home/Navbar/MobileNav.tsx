@@ -9,7 +9,7 @@ type Props = {
 }
 
 const MobileNav = ({ closeNav, showNav }: Props) => {
-  const sideBarOpenClose = showNav ? "translate-x-0" : "-translate-x-[-100%]";
+  const sideBarOpenClose = showNav ? "translate-x-0" : "translate-x-[-100%]";
   return (
     <div>
       {/* overlay */}
@@ -26,7 +26,7 @@ const MobileNav = ({ closeNav, showNav }: Props) => {
           );
         })}
         {/* close icons */}
-        <CgClose onClick={closeNav} className="absolute top-[0.7rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6 cursor-pointer" />
+        <CgClose onClick={closeNav} className="absolute top-[0.7rem] right-[1.4rem] sm:w-8 sm:h-8 w-6 h-6" />
       </div>
       ;
     </div>
