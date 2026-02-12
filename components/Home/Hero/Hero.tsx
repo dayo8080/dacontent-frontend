@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React, { useEffect, useRef } from "react";
+import { BsArrowRight } from "react-icons/bs";
 import { GiSparkles } from "react-icons/gi";
 import { TypeAnimation } from "react-type-animation";
 
@@ -109,6 +110,13 @@ const Hero = () => {
             className="group inline-flex items-center justify-center space-x-2 bg-white dark:bg-white text-gray-900 dark:text-gray-900 px-8 py-4 rounded-full font-semibold hover:bg-blue-500 hover:text-white transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl"
           >
             <span>Get Started</span>
+            <BsArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+          </Link>
+          <Link
+            href={"#"}
+            className="inline-flex items-center justify-center space-x-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-all duration-300 transform hover:scale-105"
+          >
+            <span>Contact Us</span>
           </Link>
         </div>
       </div>
