@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { GiSparkles } from "react-icons/gi";
+import { TypeAnimation } from "react-type-animation";
 
 const Hero = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -79,6 +80,22 @@ const Hero = () => {
             </span>
           </div>
         </div>
+        {/* typewrite text */}
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6">
+          <TypeAnimation
+            sequence={[
+              "We Create Magic",
+              2000,
+              "We Build Dreams",
+              2000,
+              "We Engineer Solutions",
+              2000,
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+          />
+        </h1>
       </div>
     </div>
   );
